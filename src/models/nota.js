@@ -3,7 +3,7 @@ class Nota {
         this.disciplina = disciplina;
         this.a1 = a1;
         this.a2 = a2;
-        this.a3 = a3;
+        this.a3 = a3
     }
 
     mediaFinal() {
