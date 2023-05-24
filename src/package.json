@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "cypress:open": "cypress open",
+    "test": "cypress open"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -12,5 +14,8 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "cypress": "^12.13.0"
   }
 }
