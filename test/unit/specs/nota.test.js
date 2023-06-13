@@ -22,7 +22,7 @@ describe('mediaCA()', () => {
     expect(nota.mediaCA()).toBe('MS');
   });
   test('deve retornar SS quando a média final for maior ou igual a 9 e menor ou igual a 10', () => {
-    const nota = new Nota('matematica', 9, 9, 10);
+    const nota = new Nota('matematica', 9, 9, 9);
     expect(nota.mediaCA()).toBe('SS');
   });
 });
