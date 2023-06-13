@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "http-server ./ --port=5001 -c-1",
-    "test": "cypress open"
+    "test": "jest --watchAll"
   },
   "devDependencies": {
     "cypress": "^12.14.0",
