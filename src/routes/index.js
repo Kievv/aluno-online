@@ -4,7 +4,7 @@ const alunosDB = require('../data/alunos.json');
 
 let alunoLogado = null;
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   if (alunoLogado == null) {
     return res.redirect('/login');
   }
@@ -12,18 +12,18 @@ router.get('/', function(req, res, next) {
   res.render('home', { aluno: alunoLogado });
 });
 
-router.get('/login', function(req, res, next) {
+router.get('/login', function (req, res, next) {
   res.render('login', { error: '' });
 });
 
-router.post('/login', function(req, res, next) {
-  const aluno = alunosDB.data.find(a => a.matricula === parseInt(req.body.matricula));
-  
+router.post('/login', function (req, res, next) {
+  const aluno = alunosDB.data.find((a) => a.matricula === parseInt(req.body.matricula));
+
   if (aluno === undefined) {
     return res.render('login', { error: 'Usuário não cadastrado!' });
   }
 
-  if (aluno.senha !== Buffer.from(req.body.senha).toString('base64')) {
+  if (aluno.senha !== req.body.senha) {
     return res.render('login', { error: 'Senha inválida!' });
   }
 
@@ -32,12 +32,12 @@ router.post('/login', function(req, res, next) {
   res.redirect('/');
 });
 
-router.get('/logout', function(req, res, next) {
+router.get('/logout', function (req, res, next) {
   alunoLogado = null;
   res.redirect('/login');
 });
 
-router.get('/remember', function(req, res, next) {
+router.get('/remember', function (req, res, next) {
   res.send('Não implementado!');
 });
 
